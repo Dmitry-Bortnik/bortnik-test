@@ -1,0 +1,13 @@
+<div class="dialog-container">
+    <div class="dialog-close icon-cancel" mat-dialog-close></div>
+    <div class="dialog-title dialog-title_no-border">{{ data.dialogTitle }}</div>
+    <div class="dialog-info">
+      {{ data.info }}
+    </div>
+    <div class="btn-container btn-container_no-border">
+        <button mat-raised-button color="primary" (click)="cancel()">Отмена</button>
+        <button mat-raised-button color="primary" (click)="confirm()">Удалить</button>
+        
+    </div>
+  </div>
+  

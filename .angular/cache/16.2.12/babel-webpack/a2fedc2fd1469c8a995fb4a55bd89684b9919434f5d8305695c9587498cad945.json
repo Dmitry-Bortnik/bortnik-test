@@ -1,0 +1,1 @@
+{"ast":null,"code":"export const fromAddForm = form => {\n  const req = {\n    name: form.name.trim(),\n    surname: form.surname?.trim(),\n    email: form.email.trim(),\n    phone: form.phone?.trim()\n  };\n  return req;\n};","map":null,"metadata":{},"sourceType":"module","externalDependencies":[]}

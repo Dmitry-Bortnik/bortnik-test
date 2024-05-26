@@ -1,0 +1,9 @@
+<div
+  (click)="onClick()"
+  class="option-checkbox"
+  [ngClass]="{
+    'option-checkbox_unchecked': !minus && !checked
+  }">
+  <span *ngIf="!minus && checked" class="icon-checkmark"></span>
+  <span *ngIf="minus" class="minus-icon"></span>
+</div>

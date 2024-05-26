@@ -1,0 +1,28 @@
+.btn-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 40px;
+}
+
+h2 {
+  font-size: 24px;
+  margin: 0px 0px 28px 0px;
+}
+
+.dialog-info {
+  font-size: 18px;
+  min-height: 95px;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  padding: 0px 0;
+  gap: 40px;
+}
+
+.dialog-container {
+  padding: 40px;
+}

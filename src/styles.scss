@@ -1,0 +1,11 @@
+@import './assets/font-icons/style.css';
+@import './assets/scss/buttons.scss';
+@import './assets/scss/table.scss';
+@import './assets/scss/inputs.scss';
+@import './assets/scss/main.scss';
+
+* {
+    box-sizing: border-box;
+}
+
+body { margin: 0; font-family: "Roboto", "Helvetica Neue", sans-serif; }

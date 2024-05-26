@@ -1,0 +1,14 @@
+body {
+    background: #E9F3FF;
+}
+
+.wrapper {
+    margin: 0px 16px;
+}
+
+.cdk-overlay-container {
+    .mat-mdc-dialog-container .mdc-dialog__surface {
+        border-radius: 20px;
+        box-shadow: none ;
+    }
+}

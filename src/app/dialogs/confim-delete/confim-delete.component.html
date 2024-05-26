@@ -1,0 +1,11 @@
+<div class="dialog-container">
+    <h2 class="dialog-title">{{ data.dialogTitle }} с email: {{data.email}}</h2>
+    <div class="dialog-info">
+      {{ data.info }}
+    </div>
+    <div class="btn-container">
+      <button class="button-cancel" (click)="cancel()"> Отмена </button>
+        <button class="button-primary" (click)="confirm()" color="warn"> Удалить </button>
+    </div>
+  </div>
+  
