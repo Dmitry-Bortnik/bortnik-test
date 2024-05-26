@@ -54,6 +54,10 @@ export class TableUsersComponent implements OnInit, OnChanges, AfterViewInit {
     return selectedUsers.some(({ email }) => email === user.email);
   };
 
+  public rowSelect(user: any): boolean {
+    return this.selectedUsers.includes(user);
+  }
+
   public onSelectAll() {
     const users = this.dataSourceWithSort.data ?? [];
     const localSelectedUsers = this.getLocalSelectedUsers(users, this.selectedUsers);

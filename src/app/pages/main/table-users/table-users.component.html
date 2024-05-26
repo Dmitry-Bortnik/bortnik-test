@@ -1,52 +1,50 @@
 <div class="table-container">
 
-      <ng-container *ngIf="dataSource">
-        <table mat-table matSort [dataSource]="dataSourceWithSort">
-            <ng-container matColumnDef="checkbox">
-                <th mat-header-cell *matHeaderCellDef>
-                    <div class="control-button select-all" (click)="onSelectAll()">
-                        <app-checkbox
-                        [minus]="selectedUsers.length > 0 && selectedUsers.length < dataSource.length"
-                        [checked]="selectedUsers.length === dataSource.length"></app-checkbox>
-                      </div>
-                </th>
-                <td class="cell-checkbox" mat-cell *matCellDef="let element">
-                  <app-checkbox
-                    [checked]="selectedUsers | displayIfPredicate: isUserSelected : element"
-                    (checkboxClick)="onUserSelect(element)"></app-checkbox>
-                </td>
-              </ng-container>
-            <ng-container matColumnDef="name">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header>Имя</th>
-            <td mat-cell *matCellDef="let element">
-              {{ element.name }}
-            </td>
-          </ng-container>
-  
-          <ng-container matColumnDef="surname">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header>Фамилия</th>
-            <td mat-cell *matCellDef="let element">
-              {{ element.surname }}
-            </td>
-          </ng-container>
-  
-          <ng-container matColumnDef="email">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header>E-mail</th>
-            <td mat-cell *matCellDef="let element">
-              {{ element.email }}
-            </td>
-          </ng-container>  
+  <ng-container *ngIf="dataSource">
+    <table mat-table matSort [dataSource]="dataSourceWithSort">
+      <ng-container matColumnDef="checkbox">
+        <th mat-header-cell *matHeaderCellDef>
+          <div class="control-button select-all" (click)="onSelectAll()">
+            <app-checkbox [minus]="selectedUsers.length > 0 && selectedUsers.length < dataSource.length"
+              [checked]="selectedUsers.length === dataSource.length"></app-checkbox>
+          </div>
+        </th>
+        <td class="cell-checkbox" mat-cell *matCellDef="let element">
+          <app-checkbox [checked]="selectedUsers | displayIfPredicate: isUserSelected : element"
+            (checkboxClick)="onUserSelect(element)"></app-checkbox>
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Имя</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.name }}
+        </td>
+      </ng-container>
 
-          <ng-container matColumnDef="phone">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header>Телефон</th>
-            <td mat-cell *matCellDef="let element">
-              {{ element.phone }}
-            </td>
-          </ng-container>  
-  
-          <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
-          <tr mat-row *matRowDef="let element; columns: displayedColumns" (click)="onEdit(element)"></tr>
-        </table>
-      </ng-container>   
+      <ng-container matColumnDef="surname">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Фамилия</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.surname }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>E-mail</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.email }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="phone">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Телефон</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.phone }}
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+      <tr mat-row *matRowDef="let element; columns: displayedColumns"
+      [ngClass]="{'highlighted-row': rowSelect(element)}" (click)="onEdit(element)"></tr>
+    </table>
+  </ng-container>
 </div>
-  

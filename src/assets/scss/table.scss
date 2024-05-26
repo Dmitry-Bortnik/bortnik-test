@@ -1,18 +1,35 @@
 .table-container {
-    .mat-mdc-cell, .mat-mdc-header-cell {
+
+    .mat-mdc-cell,
+    .mat-mdc-header-cell {
         padding: 0px 25px;
+        border-bottom: 1px solid rgba(171, 171, 172, 0.16);
+
         &:first-child {
             width: 50px;
         }
-        &:nth-child(4), &:nth-child(5) {
+
+        &:nth-child(4),
+        &:nth-child(5) {
             text-align: right;
+
             .mat-sort-header-container {
                 float: right;
             }
         }
-       
     }
+
     .mat-mdc-header-cell {
         color: #304879;
+    }
+}
+
+.mat-mdc-row {
+    cursor: pointer;
+    &.highlighted-row {
+        background: rgba(233, 240, 255, 1);
+    }
+    &:hover {
+        background: rgba(143, 175, 255, 0.08)
     }
 }

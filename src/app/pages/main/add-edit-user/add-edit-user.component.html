@@ -1,40 +1,40 @@
 <div class="dialog-container">
-    <div class="dialog-close icon-cancel" mat-dialog-close></div>
-    <h2 class="dialog-title">{{ data.title }}</h2>
-    <form [formGroup]="form" (ngSubmit)="onSubmit()">
-      <div class="inputs">
-        <mat-form-field class="example-full-width">
-            <mat-label>Имя</mat-label>
-            <input type="text" matInput formControlName="name">
-            <ng-container *ngIf="form.get('name')?.touched">
-              <mat-error *ngIf="form.get('name')?.hasError('required')"> Имя обязательно для заполнения </mat-error>
-            </ng-container>
-        </mat-form-field>
-  
-        <mat-form-field class="example-full-width">
-            <mat-label>Фамилия</mat-label>
-            <input type="text" matInput formControlName="surname">
-        </mat-form-field>
+  <div class="dialog-close icon-cancel" mat-dialog-close></div>
+  <h2 class="dialog-title">{{ data.title }}</h2>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="inputs">
+      <mat-form-field class="example-full-width">
+        <mat-label>Имя</mat-label>
+        <input type="text" matInput formControlName="name">
+        <ng-container *ngIf="form.get('name')?.touched">
+          <mat-error *ngIf="form.get('name')?.hasError('required')"> Имя обязательно для заполнения </mat-error>
+        </ng-container>
+      </mat-form-field>
 
-        <mat-form-field class="example-full-width">
-            <mat-label>E-mail</mat-label>
-            <input type="text" matInput formControlName="email">
-            <ng-container *ngIf="form.get('email')?.touched">
-              <mat-error *ngIf="form.get('email')?.hasError('required')"> E-mail обязательный для заполнения </mat-error>
-              <mat-error *ngIf="form.get('email')?.hasError('pattern')"> Введите правильный e-mail </mat-error>
-            </ng-container>
-        </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Фамилия</mat-label>
+        <input type="text" matInput formControlName="surname">
+      </mat-form-field>
 
-        <mat-form-field class="example-full-width">
-            <mat-label>Телефон</mat-label>
-            <input type="text" matInput formControlName="phone">
-        </mat-form-field>
-      </div>
-  
-      <div class="btn-container">
-        <button class="button-cancel" mat-dialog-close> Отмена </button>
-        <button class="button-primary" mat-dialog-close [disabled]="form.invalid" type="submit" color="primary"> Сохранить </button>
-      </div>
-    </form>
-  </div>
-  
+      <mat-form-field class="example-full-width">
+        <mat-label>E-mail</mat-label>
+        <input type="text" matInput formControlName="email">
+        <ng-container *ngIf="form.get('email')?.touched">
+          <mat-error *ngIf="form.get('email')?.hasError('required')"> E-mail обязательный для заполнения </mat-error>
+          <mat-error *ngIf="form.get('email')?.hasError('pattern')"> Введите правильный e-mail </mat-error>
+        </ng-container>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Телефон</mat-label>
+        <input type="text" matInput formControlName="phone">
+      </mat-form-field>
+    </div>
+
+    <div class="btn-container">
+      <button class="button-cancel" mat-dialog-close> Отмена </button>
+      <button class="button-primary" mat-dialog-close [disabled]="form.invalid" type="submit" color="primary"> Сохранить
+      </button>
+    </div>
+  </form>
+</div>

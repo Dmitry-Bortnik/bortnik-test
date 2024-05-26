@@ -9,15 +9,12 @@
           <span class="icon-delete"></span>
         </button>
       </div>
-      
+
       <ng-container *ngIf="users$ | async as users">
-        <app-table-users
-          [dataSource]="users"
-          (edit)="onEdit($event)"
-          [selectedUsers]="selectedUsers"
+        <app-table-users [dataSource]="users" (edit)="onEdit($event)" [selectedUsers]="selectedUsers"
           (selectedUsersChange)="onSelectedUsersChange($event)">
         </app-table-users>
       </ng-container>
-   
+
     </div>
   </div>

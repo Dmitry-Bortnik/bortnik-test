@@ -36,7 +36,6 @@ export class MainComponent  implements OnInit {
 
   private fetchData$ = new ReplaySubject<void>();
   public columns$ = new BehaviorSubject<TableColumnI<UserI>[]>([]);
-  public loading$ = new BehaviorSubject<boolean>(true);
   public users$ = new BehaviorSubject<UserI[] | null>(null);
   private destroy$ = new Subject<void>();
   public selectedUsers: UserI[] = [];
@@ -54,21 +53,16 @@ export class MainComponent  implements OnInit {
     const cachedUsers = this.localStorageService.getUsers();
     if (cachedUsers) {
       this.users$.next(cachedUsers);
-      this.loading$.next(false);
     } else {
       this.fetchData$.next();
     }
 
     this.fetchData$
     .pipe(
-      map(() => {
-        this.loading$.next(true);
-      }),
       switchMap(() => this.apiService.getClients().pipe(catchError(() => of(null)))),
       takeUntil(this.destroy$),
     )
     .subscribe(res => {
-      this.loading$.next(false);
       this.users$.next(res?.users || null);
       this.localStorageService.setUsers(res.users);
     });
